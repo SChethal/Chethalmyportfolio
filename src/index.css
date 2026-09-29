@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    background-color: #040907;
+    color: #F3F4F1;
+    overflow-x: hidden;
+  }
+}
+
+/* Glassmorphism custom classes */
+.glass-panel {
+  background: rgba(10, 26, 19, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(134, 239, 172, 0.12);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.glass-panel-elevated {
+  background: rgba(14, 36, 26, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(134, 239, 172, 0.22);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+.glass-pill {
+  background: rgba(15, 36, 27, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(134, 239, 172, 0.15);
+}
+
+/* 3D sphere gradient lighting simulation */
+.sphere-3d {
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 28%, #86efac 0%, #166534 38%, #072719 70%, #03100a 100%);
+  box-shadow: inset -10px -15px 30px rgba(0, 0, 0, 0.8),
+              inset 8px 8px 16px rgba(255, 255, 255, 0.35),
+              0 15px 35px rgba(5, 38, 22, 0.4);
+}
+
+.sphere-3d-sage {
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #bbf7d0 0%, #4ade80 25%, #15803d 55%, #052e16 85%, #021208 100%);
+  box-shadow: inset -8px -12px 24px rgba(0, 0, 0, 0.75),
+              inset 6px 6px 14px rgba(255, 255, 255, 0.4),
+              0 20px 40px rgba(20, 83, 45, 0.35);
+}
+
+.sphere-3d-cream {
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 25%, #ffffff 0%, #fef3c7 25%, #d97706 65%, #78350f 90%, #291205 100%);
+  box-shadow: inset -6px -10px 20px rgba(0, 0, 0, 0.7),
+              inset 5px 5px 12px rgba(255, 255, 255, 0.6),
+              0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Perspective utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.perspective-1200 {
+  perspective: 1200px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #040907;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #143525;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1b4d36;
+}
+
+/* Smooth motion constraints */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
